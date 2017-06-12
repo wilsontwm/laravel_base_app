@@ -26,6 +26,7 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => '/'], function(){
         Route::get('home', 'HomeController@index')->name('home');
 
         // User routes
+        Route::get('users', ['as' => 'user.list', 'uses' => 'UserController@index']);
         Route::get('users/password', ['as' => 'user.password.edit', 'uses' => 'UserController@editPassword']);
         Route::patch('users/password', ['as' => 'user.password.update', 'uses' => 'UserController@updatePassword']);
         Route::get('users/picture', ['as' => 'user.picture.edit', 'uses' => 'UserController@editPicture']);

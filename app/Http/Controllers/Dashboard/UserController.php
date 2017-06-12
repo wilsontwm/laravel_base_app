@@ -29,7 +29,7 @@ class UserController extends Controller
     public function __construct(User $user)
     {
         $this->user = $user;
-        $this->contentTitle = 'User <small>Control panel</small>';
+        $this->contentTitle = 'Profile <small>Control panel</small>';
     }
 
     /**
@@ -37,9 +37,30 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $contentTitle = $this->contentTitle;
+        $limit = $request->input('limit', 12);
+        $search = $request->input('p', '');
+        if($search !== ''){
+            $users = User::where([
+                                    ['status', '=', User::STATUS_ACTIVE],
+                                    ['name', 'like', '%' . $search . '%'],
+                                    ['id', '<>', Auth::id()]
+                                ])
+                                ->orderBy('name', 'asc')
+                                ->paginate($limit);
+        }
+        else{
+            $users = User::where([
+                                    ['status', '=', User::STATUS_ACTIVE],
+                                    ['id', '<>', Auth::id()]
+                                ])
+                                ->orderBy('name', 'asc')
+                                ->paginate($limit);
+        }
+
+        return view('dashboard.user.index', compact('users', 'search', 'contentTitle'));
     }
 
     /**

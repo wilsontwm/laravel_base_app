@@ -21,3 +21,63 @@
 .dropdown-user-menu > li > a > .ion {
     width: 20px;
 }
+
+/*
+ * Component: Users List
+ * ---------------------
+ */
+.users-list > li {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .users-list > li {
+        width: 33.3%;
+        float: left;
+        padding: 10px;
+        text-align: center;
+    }
+}
+@media (min-width: 992px) {
+    .users-list > li {
+        width: 25%;
+        float: left;
+        padding: 10px;
+        text-align: center;
+    }
+}
+@media (min-width: 1200px) {
+    .users-list > li {
+        width: 12.5%;
+        float: left;
+        padding: 10px;
+        text-align: center;
+    }
+}
+.users-list > li img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+.users-list > li > a:hover,
+.users-list > li > a:hover .users-list-name {
+    color: #999;
+}
+.users-list-name,
+.users-list-mail {
+    display: block;
+}
+.users-list-name {
+    font-weight: 600;
+    color: #444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.users-list-mail {
+    color: #999;
+    font-size: 12px;
+}
