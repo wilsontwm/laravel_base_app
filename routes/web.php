@@ -42,5 +42,9 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => '/'], function(){
 
     });
 
+    // Socialite routes
+    Route::get('/redirect/{provider}', ['as' => 'social.redirect', 'uses' => 'SocialAuthController@redirect']);
+    Route::get('/callback/{provider}', ['as' => 'social.callback', 'uses' => 'SocialAuthController@callback']);
+
 });
 

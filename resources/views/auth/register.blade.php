@@ -68,21 +68,12 @@
                                     Register
                                 </button>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-10 col-md-offset-1">
-                                <p class="text-center">- OR -</p>
-                                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-                                    Facebook</a>
-                                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
-                                    Google+</a>
-                            </div>
-
                             <a class="col-md-10 col-md-offset-1" href="{{ url('/login') }}">
                                 Already have an account? Login here.
                             </a>
+
                         </div>
+
                     </form>
                 </div>
             </div>

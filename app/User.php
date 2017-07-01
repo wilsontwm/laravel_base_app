@@ -195,6 +195,16 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
     }
 
+    /**
+     * One-To-Many Relationship Method for accessing the User->socialAccounts
+     *
+     * @return QueryBuilder Object
+     */
+    public function socialAccounts()
+    {
+        return $this->hasMany('App\SocialAccount');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Functional Methods
