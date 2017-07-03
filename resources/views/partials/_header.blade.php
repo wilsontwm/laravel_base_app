@@ -14,6 +14,16 @@
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>
         </a>
+        <div class="col-xs-8 col-sm-6 col-md-6 col-lg-4 margin">
+            {!! Form::model(null, ['url' => route('user.list'), 'method' => 'GET']) !!}
+            <div class="input-group input-group-sm">
+                <input name="p" type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+            </div>
+            {!! Form::close() !!}
+        </div>
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
